@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    
+</head>
+<body>
+    <h1 id="name">This is Abhijeet Kumar</h1>
+    <h2>Hello world</h2>
+    <h3>Hello world</h3>
+    <h3>Hello world</h3>
+    <h3>Hello world</h3>
+
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+
+    <h4 class="head">Hello world</h4>
+    <h4 class="head">Hello world</h4>
+    <h4 class="head">Hello world</h4>
+    <h4 class="head">Hello world</h4>
+
+    
+</body>
+<script>
+    const myName = document.querySelector('h1')
+myName.style.background="green"
+myName.style.padding="10px"
+myName.style.borderRadius="5px"
+myName.innerHTML="This is me"
+
+document.querySelector('h2').style.background="red"
+const heading=document.getElementById("name")
+heading.style.background="orange"
+
+const li =document.querySelectorAll('li')
+li[0].style.color="red"
+li[1].style.color="green"
+li[2].style.color="purple"
+
+const h3= document.querySelectorAll('h3')
+h3.forEach((list)=>{
+    list.style.color="orange"
+}
+)
+
+const h4=document.getElementsByClassName('head')
+const list = Array.from(h4)
+list.forEach((items)=> items.style.background="purple")
+list.forEach((items)=> items.style.color="white")
+</script>
+</html>
