@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM4</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+        <ul class="language">
+            <li>Javascript</li>
+        </ul>
+    
+</body>
+<script>
+    //way1 to append
+    const li = document.createElement('li')
+    li.innerHTML='c++'
+    document.querySelector('.language').appendChild(li)
+    
+    //way2 using function
+    function addLanguge(langName){
+        const li=document.createElement('li');
+        li.innerHTML= `${langName}`
+        document.querySelector('.language').appendChild(li)
+
+    }
+    addLanguge('swift')
+
+    //way3 - optimised
+    function addOptLang(langName){
+        const li= document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+
+    }
+    addOptLang("java")
+
+    //Edit way1
+    const thirdLang=document.querySelector('li:nth-child(3)')
+    // thirdLang.innerHTML="mojo"
+    const newLi=document.createElement('li')
+    newLi.textContent="GoLang"
+    thirdLang.replaceWith(newLi)
+
+    //edit way-2
+    const firstLang = document.querySelector("li:nth-child(1)")
+    firstLang.outerHTML='<li>c#</li>'
+
+    //remove
+    const lastLang= document.querySelector("li:last-child")
+    lastLang.remove()
+
+
+
+</script>
+</html>
