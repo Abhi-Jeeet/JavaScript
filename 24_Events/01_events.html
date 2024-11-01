@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="bulb" src="bulb.jpg" alt=""></li>
+            <li><img width="200px" id="flower" src="flower.jpg" alt=""></li>
+            <li><img width="200px" id="nature" src="nature.jpg" alt=""></li>
+            <li><img width="200px" id="tiger" src="tiger.jpg" alt=""></li>
+        </ul>
+    </div>
+    
+</body>
+<script>
+
+    // document.getElementById('bulb').onclick=function(){
+    //     alert("Bulb is clicked")
+    // }
+
+    // document.getElementById('bulb').addEventListener('click', function(){
+    //     alert('bulb is clicked again')
+    // })
+
+    //Bubbling
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+        
+    // },false) // clicked inside the ul
+
+    // document.querySelector('#tiger').addEventListener('click', function(e){
+    //     console.log("animal is clicked");
+        
+    // }, false)// 1.animal is clicked, 2.clicked inside the ul
+
+
+    // //Capturing
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+        
+    // },true) // clicked inside the ul
+
+    // document.querySelector('#tiger').addEventListener('click', function(e){
+    //     console.log("animal is clicked");
+        
+    // }, true)// 2.clicked inside the ul 1.animal is clicked
+
+    //Removing the element on clicking
+    //e.target.parentNode
+    // document.querySelector("#images").addEventListener('click', function(e){
+    //     console.log(e.target.parentNode);
+    //     let removeit=e.target.parentNode
+    //     removeit.remove()
+        
+    // })
+
+    //e.target.tagName
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName==='IMG'){
+            let removeIt=e.target.parentNode
+            removeIt.remove()
+        }
+    })
+
+</script>
+</html>
